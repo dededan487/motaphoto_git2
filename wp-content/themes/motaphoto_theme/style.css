@@ -27,14 +27,14 @@ Text Domain: motaphoto_theme
 @font-face{
     font-family: 'space_mono_italic_700';
     src: url('/wp-content/themes/motaphoto_theme/fonts/SpaceMono-BoldItalic.ttf');
-    font-weight: bold;
+    font-weight: 700;
     font-style: italic;
 }
 
 @font-face{
     font-family: 'space_mono_bold';
     src: url('/wp-content/themes/motaphoto_theme/fonts/SpaceMono-Bold.ttf');
-    font-weight:bolder;
+    font-weight:bold;
     font-style: normal;
 }
 
@@ -48,9 +48,13 @@ Text Domain: motaphoto_theme
 body {
     margin: auto !important;
     width: auto;
-    background-color: rgb(90, 83, 83);
+    background-color: rgb(255, 255, 255);
 }
 
+main{
+    position: absolute;
+    top: 50%;
+}
 
 h1 {
     font-family: 'space_mono_italic_700', sans-serif;

@@ -13,8 +13,6 @@
 
 <body <?php body_class(); ?>>
 
-    <header>
-    
         <nav id="navigation">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.png" alt="Titre">
         
@@ -39,7 +37,7 @@
 
 <?php afficher_shortcode_dans_entete(); ?>
 
-    </header>
+
  
 
        
