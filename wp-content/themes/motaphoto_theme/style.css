@@ -12,35 +12,36 @@ Text Domain: motaphoto_theme
 /*polices*/
 @font-face{
     font-family: 'space_mono_normal';
-    src: url('/wp-content/themes/motaphoto_theme/fonts/SpaceMono-Regular.ttf');
+    src: url('fonts/SpaceMono-Regular.ttf');
     font-weight: normal;
     font-style: normal;
 }
 
-@font-face{
+@font-face {
     font-family: 'space_mono_italic_400';
-    src: url('/wp-content/themes/motaphoto_theme/fonts/SpaceMono-Italic.ttf');
+    src: url('fonts/SpaceMono-Italic.ttf'); /* Chemin relatif au dossier du thème */
     font-weight: 400;
     font-style: italic;
 }
 
-@font-face{
+@font-face {
     font-family: 'space_mono_italic_700';
-    src: url('/wp-content/themes/motaphoto_theme/fonts/SpaceMono-BoldItalic.ttf');
+    src: url('fonts/SpaceMono-BoldItalic.ttf'); /* Chemin relatif au dossier du thème */
     font-weight: 700;
     font-style: italic;
 }
 
+
 @font-face{
     font-family: 'space_mono_bold';
-    src: url('/wp-content/themes/motaphoto_theme/fonts/SpaceMono-Bold.ttf');
+    src: url('fonts/SpaceMono-Bold.ttf');
     font-weight:bold;
     font-style: normal;
 }
 
 @font-face{
     font-family: 'poppins_light';
-    src: url('/wp-content/themes/motaphoto_theme/fonts/Poppins-Light.ttf');
+    src: url('fonts/Poppins-Light.ttf');
     font-weight: 300;
     font-style: normal;
 }
