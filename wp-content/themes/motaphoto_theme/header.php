@@ -9,8 +9,6 @@
         <?php is_front_page() ? bloginfo('description') : wp_title(''); ?>
     </title>
 
-
-    
     <?php wp_head(); ?>
 </head>
 

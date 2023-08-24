@@ -2,13 +2,15 @@
 
 
 #navigation  {
-    display: none;
+    position: fixed;
     width: 100%;
     padding: 0 2%; /* Marge intérieure */
     box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: white;
+    z-index: 5;
     
 }
 
@@ -17,6 +19,8 @@
 #primary-menu {
     display: flex;
     justify-content: end;
+    position: relative;
+    z-index: 10;
 }
 
 

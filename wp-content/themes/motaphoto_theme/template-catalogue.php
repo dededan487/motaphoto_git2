@@ -16,10 +16,8 @@ get_header();
             // Arguments pour la requête WP_Query
             $args = array(
                 'post_type' => 'photos',
-                // Utiliser le CPT "photos"
                 'posts_per_page' => 12,
-                // Nombre de photos à afficher par page
-                'paged' => get_query_var('paged') ? get_query_var('paged') : 1, // Pagination
+                'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
             );
 
             // Créer une nouvelle requête WP_Query
@@ -27,15 +25,32 @@ get_header();
 
             // Si des photos sont trouvées
             if ($query->have_posts()):
+                // Compteur pour suivre le nombre d'images dans le bloc
+                $counter = 0;
+
                 // Boucle pour afficher chaque photo
                 while ($query->have_posts()):
                     $query->the_post();
+
+                    if ($counter % 2 === 0) {
+                        // Ouvrir un nouveau bloc d'images pour chaque paire d'images
+                        echo '<div class="image-block">';
+                    }
                     ?>
-                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <!-- Lien vers la photo -->
+                    <!-- Lien entourant l'icône pour activer la lightbox -->
                     <div class="related-thumbnail">
-                        <?php the_post_thumbnail('thumbnail'); ?> <!-- Afficher la miniature de la photo -->
+                        <a href="<?php the_permalink(); ?>" class="lightbox-trigger">
+                            <span class="lightbox-icon">&#128269;</span>
+                            <?php the_post_thumbnail('full', array('title' => get_the_title())); ?>
+                        </a>
                     </div>
                     <?php
+                    $counter++;
+
+                    if ($counter % 2 === 0 || $counter === $query->post_count) {
+                        // Fermer le bloc d'images si le compteur atteint 2 ou si c'est la dernière image
+                        echo '</div>';
+                    }
                 endwhile;
                 wp_reset_postdata(); // Réinitialiser les données de la requête
             else:
@@ -48,35 +63,7 @@ get_header();
             <button id="load-more-button">Charger plus</button>
         </div>
 
-        <!--------------------Ajout des champs de filtre ------------------------->
-        <!-- Champ de sélection pour les catégories -->
-        <select id="category-filter">
-            <option value="">Toutes les catégories</option>
-            <?php
-            // Récupérer la liste des termes de la taxonomie 'categorie_photo'
-            $categories = get_terms('categorie_photo');
-            foreach ($categories as $category) {
-                echo '<option value="' . esc_attr($category->term_id) . '">' . esc_html($category->name) . '</option>';
-            }
-            ?>
-
-        </select>
-
-        <!-- Champ de sélection pour les formats -->
-        <select id="format-filter">
-            <option value="">Tous les formats</option>
-            <option value="paysage">Paysage</option>
-            <option value="portrait">Portrait</option>
-        </select>
-
-        <!-- Champ de sélection pour l'ordre de tri -->
-        <select id="order-filter">
-            <option value="DESC">Plus récentes</option>
-            <option value="ASC">Plus anciennes</option>
-        </select>
-
-
-
+        <!-- Ajout des champs de filtre (à conserver comme dans votre code) -->
 
     </main><!-- #main -->
 </div><!-- #primary -->

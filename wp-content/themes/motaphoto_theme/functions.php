@@ -19,6 +19,8 @@ function enqueue_scripts_and_styles()
   // Enqueue le script pour filtrer les photos
   wp_enqueue_script('filter-photos', get_template_directory_uri() . '/js/filter-photos.js', array(), '1.0', true);
 
+  wp_enqueue_script('lightbox-script', get_template_directory_uri() . '/js/lightbox.js', array('jquery'), '1.0', true);
+
   // Transmettre des données JavaScript au script filter-photos.js
   wp_localize_script(
     'filter-photos',
@@ -31,7 +33,6 @@ function enqueue_scripts_and_styles()
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_scripts_and_styles');
-
 
 
 // Cette fonction affiche le contenu d'un shortcode dans l'en-tête du site WordPress.
@@ -85,7 +86,7 @@ function load_more_photos()
       $query->the_post();
       ?>
       <!-- Affiche le lien vers la page de la photo et le titre de la photo -->
-      <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+      <a href="<?php the_permalink(); ?>" class="thumbnail-preview"><?php the_title(); ?></a>
       <!-- Affiche la miniature de la photo -->
       <div class="related-thumbnail">
         <?php the_post_thumbnail('thumbnail'); ?>

@@ -10,7 +10,7 @@ Text Domain: motaphoto_theme
 
 */
 /*polices*/
-@font-face{
+@font-face {
     font-family: 'space_mono_normal';
     src: url('fonts/SpaceMono-Regular.ttf');
     font-weight: normal;
@@ -19,27 +19,29 @@ Text Domain: motaphoto_theme
 
 @font-face {
     font-family: 'space_mono_italic_400';
-    src: url('fonts/SpaceMono-Italic.ttf'); /* Chemin relatif au dossier du thème */
+    src: url('fonts/SpaceMono-Italic.ttf');
+    /* Chemin relatif au dossier du thème */
     font-weight: 400;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'space_mono_italic_700';
-    src: url('fonts/SpaceMono-BoldItalic.ttf'); /* Chemin relatif au dossier du thème */
+    src: url('fonts/SpaceMono-BoldItalic.ttf');
+    /* Chemin relatif au dossier du thème */
     font-weight: 700;
     font-style: italic;
 }
 
 
-@font-face{
+@font-face {
     font-family: 'space_mono_bold';
     src: url('fonts/SpaceMono-Bold.ttf');
-    font-weight:bold;
+    font-weight: bold;
     font-style: normal;
 }
 
-@font-face{
+@font-face {
     font-family: 'poppins_light';
     src: url('fonts/Poppins-Light.ttf');
     font-weight: 300;
@@ -52,38 +54,49 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
-main{
+/*main{
     position: absolute;
     top: 50%;
-}
+}*/
 
 h1 {
     font-family: 'space_mono_italic_700', sans-serif;
+    font-size: 3vw;
+    /* La taille de la police sera de 3% de la largeur du viewport */
+
 }
 
 h2 {
     font-family: 'space_mono_italic_400', sans-serif;
+    font-size: 2vw;
+    /* La taille de la police sera de 2% de la largeur du viewport */
+
 }
 
 h3 {
     font-family: 'space_mono_normal', sans-serif;
+    font-size: 1vw;
+    /* La taille de la police sera de % de la largeur du viewport */
+
 }
 
 .description_photo {
-        font-family: 'space_mono_normal', sans-serif;
+    font-family: 'space_mono_normal', sans-serif;
 }
 
 
 /* Style pour la section du header */
 .header-container {
-    position: absolute;
-    width: 100%;
-    height: 28%;
-    overflow: hidden;
+    position: relative;
+    height: 50vh;
+    /* Hauteur égale à 100% de la hauteur du viewport */
+    width: 100vw;
+    /* Largeur égale à 100% de la largeur du viewport */
+
 }
 
 .main-photo {
-    position: absolute;
+    position: relative;
     z-index: -1;
     width: 100%;
     height: 100%;
@@ -100,4 +113,48 @@ h3 {
     max-width: 1000px;
     text-align: center;
 }
+
+/* Styles CSS pour contrôler l'affichage des miniatures au survol */
+
+
+
+.thumbnail-preview img {
+    position: absolute;
+    top: -50px;
+    /* Ajustez cette valeur pour définir la position verticale de la miniature */
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease;
+}
+
+.thumbnail-preview:hover img {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* style.css */
+.thumbnail-preview {
+    display: inline-block;
+    width: 50%; /* Occupe la moitié de la largeur du conteneur parent */
+    max-width: 100%; /* Pour éviter que les images dépassent la taille du conteneur */
+    padding: 10px; /* Espacement entre les images */
+    box-sizing: border-box; /* Inclure les bordures et les marges dans la largeur */
+}
+
+.related-thumbnail {
+    width: 100%; /* Occupe la pleine largeur du conteneur parent */
+    max-width: 564px; /* Limite la largeur des images à 564px */
+    height: auto; /* Ajuste automatiquement la hauteur pour conserver le rapport largeur/hauteur */
+    margin-bottom: 20px; /* Espacement entre les blocs d'image */
+}
+
+#load-more {
+    text-align: center; /* Centrer le bouton "Charger plus" */
+    margin-top: 20px; /* Espacement entre les blocs d'image et le bouton */
+}
+
+
+
 
