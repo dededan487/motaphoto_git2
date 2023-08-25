@@ -40,6 +40,11 @@ function afficher_shortcode_dans_entete()
   echo do_shortcode('[simple_modal]');
 }
 
+//fonction Pour les images carrées
+
+
+
+
 function load_more_photos_scripts()
 {
   // Charge le script 'load-more-photos.js' avec jQuery comme dépendance

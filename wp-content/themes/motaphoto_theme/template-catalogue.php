@@ -15,10 +15,8 @@ get_header();
             <?php
             // Arguments pour la requête WP_Query
             $args = array(
-                'post_type' => 'photos',
-                // Utiliser le CPT "photos"
-                'posts_per_page' => 12,
-                // Nombre de photos à afficher par page
+                'post_type' => 'photos', // Utiliser le CPT "photos"
+                'posts_per_page' => 12, // Nombre de photos à afficher par page
                 'paged' => get_query_var('paged') ? get_query_var('paged') : 1, // Pagination
             );
 
@@ -48,7 +46,7 @@ get_header();
             <button id="load-more-button">Charger plus</button>
         </div>
 
-        <!--------------------Ajout des champs de filtre ------------------------->
+        <!-- Ajout des champs de filtre -->
         <!-- Champ de sélection pour les catégories -->
         <select id="category-filter">
             <option value="">Toutes les catégories</option>
@@ -59,7 +57,6 @@ get_header();
                 echo '<option value="' . esc_attr($category->term_id) . '">' . esc_html($category->name) . '</option>';
             }
             ?>
-
         </select>
 
         <!-- Champ de sélection pour les formats -->
@@ -74,9 +71,6 @@ get_header();
             <option value="DESC">Plus récentes</option>
             <option value="ASC">Plus anciennes</option>
         </select>
-
-
-
 
     </main><!-- #main -->
 </div><!-- #primary -->

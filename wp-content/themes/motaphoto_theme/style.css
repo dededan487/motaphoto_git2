@@ -10,7 +10,7 @@ Text Domain: motaphoto_theme
 
 */
 /*polices*/
-@font-face{
+@font-face {
     font-family: 'space_mono_normal';
     src: url('fonts/SpaceMono-Regular.ttf');
     font-weight: normal;
@@ -19,27 +19,29 @@ Text Domain: motaphoto_theme
 
 @font-face {
     font-family: 'space_mono_italic_400';
-    src: url('fonts/SpaceMono-Italic.ttf'); /* Chemin relatif au dossier du thème */
+    src: url('fonts/SpaceMono-Italic.ttf');
+    /* Chemin relatif au dossier du thème */
     font-weight: 400;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'space_mono_italic_700';
-    src: url('fonts/SpaceMono-BoldItalic.ttf'); /* Chemin relatif au dossier du thème */
+    src: url('fonts/SpaceMono-BoldItalic.ttf');
+    /* Chemin relatif au dossier du thème */
     font-weight: 700;
     font-style: italic;
 }
 
 
-@font-face{
+@font-face {
     font-family: 'space_mono_bold';
     src: url('fonts/SpaceMono-Bold.ttf');
-    font-weight:bold;
+    font-weight: bold;
     font-style: normal;
 }
 
-@font-face{
+@font-face {
     font-family: 'poppins_light';
     src: url('fonts/Poppins-Light.ttf');
     font-weight: 300;
@@ -52,7 +54,7 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
-main{
+main {
     position: absolute;
     top: 50%;
 }
@@ -70,7 +72,7 @@ h3 {
 }
 
 .description_photo {
-        font-family: 'space_mono_normal', sans-serif;
+    font-family: 'space_mono_normal', sans-serif;
 }
 
 
@@ -105,20 +107,36 @@ h3 {
 /*miniature au survol*/
 .thumbnail-preview {
     position: relative;
-    text-decoration: none; /* Supprime la décoration de texte par défaut (le trait) */
-
+    text-decoration: none;
+    /* Supprime la décoration de texte par défaut (le trait) */
+    font-size: 3vw;
 }
 
 .thumbnail-preview img {
     position: absolute;
-    top: -50px; /* Ajustez cette valeur pour définir la position verticale de la miniature */
+    top: -50px;
+    /* Ajustez cette valeur pour définir la position verticale de la miniature */
     left: 0;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.3s ease;
+
 }
 
 .thumbnail-preview:hover img {
     visibility: visible;
     opacity: 1;
 }
+
+
+
+/* container photo catalog en grid*/
+
+
+
+
+
+
+
+
+
