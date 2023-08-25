@@ -101,3 +101,24 @@ h3 {
     text-align: center;
 }
 
+
+/*miniature au survol*/
+.thumbnail-preview {
+    position: relative;
+    text-decoration: none; /* Supprime la décoration de texte par défaut (le trait) */
+
+}
+
+.thumbnail-preview img {
+    position: absolute;
+    top: -50px; /* Ajustez cette valeur pour définir la position verticale de la miniature */
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease;
+}
+
+.thumbnail-preview:hover img {
+    visibility: visible;
+    opacity: 1;
+}

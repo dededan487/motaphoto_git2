@@ -1,4 +1,3 @@
-
 <?php
 /*
 Template Name: CPT Perso
@@ -66,7 +65,50 @@ template Podt Type: post, page, product
                     <button class="open-popup"
                         data-reference="<?php echo esc_attr(get_field('reference')); ?>">Contact</button>
                 </div>
-                <?php get_template_part('templates_parts/photo_block'); ?> <!-- Inclut le template pour les photos apparentées -->
+                <!-- Ajout des miniatures et boutons de pagination -->
+                <!-- Ceci est un commentaire HTML pour indiquer où commence la section des miniatures et boutons de pagination -->
+                <div class="pagination-container">
+                    <!-- Créez un conteneur pour les miniatures et les boutons de pagination -->
+                    <?php
+                    // Ouvre une balise PHP pour exécuter du code PHP à l'intérieur du HTML
+                
+                    $previous_photo = get_previous_post();
+                    // Récupère l'article précédent dans le flux de publications
+                
+                    $next_photo = get_next_post();
+                    // Récupère l'article suivant dans le flux de publications
+                    ?>
+
+                    <?php if ($previous_photo): ?>
+                        <!-- Commence une structure conditionnelle pour vérifier si un article précédent existe -->
+
+                        <a href="<?php echo get_permalink($previous_photo->ID); ?>" class="previous-photo thumbnail-preview">
+                            <!-- Crée un lien vers l'article précédent avec la classe "previous-photo" et "thumbnail-preview" -->
+                            <span class="pagination-label">&larr;</span>
+                            <!-- Affiche un texte "Précédente" avec un chevron pointant vers la gauche -->
+                            <?php echo get_the_post_thumbnail($previous_photo->ID, 'thumbnail'); ?>
+                            <!-- Affiche la miniature de l'article précédent avec la taille "thumbnail" -->
+                        </a>
+                    <?php endif; ?>
+                    <!-- Ferme la structure conditionnelle pour l'article précédent -->
+
+                    <?php if ($next_photo): ?>
+                        <!-- Commence une structure conditionnelle pour vérifier si un article suivant existe -->
+
+                        <a href="<?php echo get_permalink($next_photo->ID); ?>" class="next-photo thumbnail-preview">
+                            <!-- Crée un lien vers l'article suivant avec la classe "next-photo" et "thumbnail-preview" -->
+                            <span class="pagination-label"> &rarr;  </span>
+                            <!-- Affiche un texte "Suivante" avec un chevron pointant vers la droite -->
+                            <?php echo get_the_post_thumbnail($next_photo->ID, 'thumbnail'); ?>
+                            <!-- Affiche la miniature de l'article suivant avec la taille "thumbnail" -->
+                        </a>
+                    <?php endif; ?>
+                    <!-- Ferme la structure conditionnelle pour l'article suivant -->
+                </div>
+                <!-- Ferme le conteneur des miniatures et boutons de pagination -->
+
+                <?php get_template_part('templates_parts/photo_block'); ?>
+                <!-- Inclut le template pour les photos apparentées -->
             </article>
 
         <?php endwhile; ?>
@@ -91,7 +133,7 @@ template Podt Type: post, page, product
 
         });
     });
-</script> 
+</script>
 
 </body>
 
