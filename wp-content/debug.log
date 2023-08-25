@@ -50,3 +50,17 @@
 [22-Aug-2023 13:53:38 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\motaphoto_mamp\wp-includes\functions.php on line 5349
 [22-Aug-2023 13:53:40 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\motaphoto_mamp\wp-includes\functions.php on line 5349
 [22-Aug-2023 13:53:40 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\motaphoto_mamp\wp-includes\functions.php on line 5349
+[25-Aug-2023 11:11:33 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\motaphoto_mamp\wp-includes\functions.php on line 5349
+[25-Aug-2023 11:11:33 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\motaphoto_mamp\wp-includes\functions.php on line 5349
+[25-Aug-2023 11:11:42 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\motaphoto_mamp\wp-includes\functions.php on line 5349
+[25-Aug-2023 11:11:42 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\motaphoto_mamp\wp-includes\functions.php on line 5349
+[25-Aug-2023 11:11:49 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\motaphoto_mamp\wp-includes\functions.php on line 5349
+[25-Aug-2023 11:11:49 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\motaphoto_mamp\wp-includes\functions.php on line 5349
+[25-Aug-2023 11:16:34 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\motaphoto_mamp\wp-includes\functions.php on line 5349
+[25-Aug-2023 11:16:34 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\motaphoto_mamp\wp-includes\functions.php on line 5349
+[25-Aug-2023 11:16:44 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\motaphoto_mamp\wp-includes\functions.php on line 5349
+[25-Aug-2023 11:16:44 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\motaphoto_mamp\wp-includes\functions.php on line 5349
+[25-Aug-2023 11:17:24 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\motaphoto_mamp\wp-includes\functions.php on line 5349
+[25-Aug-2023 11:17:24 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\motaphoto_mamp\wp-includes\functions.php on line 5349
+[25-Aug-2023 11:17:41 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\motaphoto_mamp\wp-includes\functions.php on line 5349
+[25-Aug-2023 11:17:41 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\motaphoto_mamp\wp-includes\functions.php on line 5349
