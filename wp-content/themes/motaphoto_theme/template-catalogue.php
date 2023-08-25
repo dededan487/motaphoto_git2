@@ -29,9 +29,9 @@ get_header();
                 while ($query->have_posts()):
                     $query->the_post();
                     ?>
-                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <!-- Lien vers la photo -->
+                    <a href="<?php the_permalink(); ?>" class="liens"><?php the_title(); ?></a> <!-- Lien vers la photo -->
                     <div class="related-thumbnail">
-                        <?php the_post_thumbnail('thumbnail'); ?> <!-- Afficher la miniature de la photo -->
+                        <?php the_post_thumbnail('full'); ?> <!-- Afficher la miniature de la photo -->
                     </div>
                     <?php
                 endwhile;
