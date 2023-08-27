@@ -90,11 +90,11 @@ function load_more_photos()
       $query->the_post();
       ?>
       <!-- Affiche le lien vers la page de la photo et le titre de la photo -->
-      <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+      <a href="<?php the_permalink(); ?>" class="liens"><?php the_title(); ?></a>
       <!-- Affiche la miniature de la photo -->
       <div class="related-thumbnail">
-        <?php the_post_thumbnail('thumbnail'); ?>
-        <?php the_title(); ?>
+        <?php the_post_thumbnail('full'); ?>
+        <!--<?php the_title(); ?> annule le titre -->
       </div>
       <?php
     endwhile;
@@ -162,10 +162,10 @@ function filter_photos()
       $query->the_post();
       // Affiche les photos filtrées de la même manière que dans load_more_photos()
       ?>
-      <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+      <a href="<?php the_permalink(); ?>" class="liens"><?php the_title(); ?></a>
       <div class="related-thumbnail">
-        <?php the_post_thumbnail('thumbnail'); ?>
-        <?php the_title(); ?>
+        <?php the_post_thumbnail('full'); ?>
+        <!--<?php the_title(); ?>  annule le titre-->
       </div>
       <?php
     endwhile;
