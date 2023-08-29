@@ -57,14 +57,31 @@ get_header();
                 while ($query->have_posts()):
                     $query->the_post();
                     ?>
-
                     <div class="related-thumbnail">
-                        <a href="<?php the_permalink(); ?>" class="liens">
-                            <?php the_post_thumbnail('full'); ?> <!-- Afficher la photo -->
+                        <h3 class="titre_categorie">
+                            <span class="titre1">
+                                <?php the_title(); ?>
+                            </span> <!-- Affiche le titre de l'article -->
+                            <span class="categorie1">
+                                <?php
+                                $categories = get_the_terms(get_the_ID(), 'categorie_photo');
+                                if ($categories && !is_wp_error($categories)) {
+                                    echo '<p>';
+                                    foreach ($categories as $category) {
+                                        echo $category->name . ' '; // Affiche les catégories du CPT
+                                    }
+                                    echo '</p>';
+                                }
+                                ?>
+                            </span>
+                        </h3>
+                        <div class="eye-icon">
+                            <a href="<?php the_permalink(); ?>" class="liens">&#128065;</a>
+                            <!-- Lien vers la photo (icône d'œil) -->
 
-                            <div class="eye-icon">&#128065;</div><!-- Icône d'œil -->
-                        </a> <!-- Lien vers la photo -->
+                        </div>
 
+                        <?php the_post_thumbnail('full'); ?> <!-- Afficher la photo -->
                     </div>
 
                     <?php
