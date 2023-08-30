@@ -46,4 +46,17 @@ jQuery(document).ready(function () {
     jQuery('#load-more-button').on('click', function () {
         loadPhotos();
     });
+
+
+    // Gestionnaire d'événement pour le bouton "toutes les photos"
+    jQuery('#load-more-related-photos').on('click', function () {
+        jQuery('.liens_apparentes li:hidden').removeClass('hidden-photo').addClass('visible-photo'); // Ajoute la classe "visible-photo" aux éléments cachés devenus visibles
+        jQuery(this).hide(); // Cache le bouton "load-more-related-photos"
+        
+    });
 });
+
+
+
+// ----------------------bouton "toutes les photos" du lien apparenté 
+

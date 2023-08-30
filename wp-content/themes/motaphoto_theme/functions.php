@@ -40,11 +40,7 @@ function afficher_shortcode_dans_entete()
   echo do_shortcode('[simple_modal]');
 }
 
-//fonction Pour les images carrées
-
-
-
-
+//-----------script pour charger plus d'images-----------------
 function load_more_photos_scripts()
 {
   // Charge le script 'load-more-photos.js' avec jQuery comme dépendance
@@ -64,6 +60,8 @@ function load_more_photos_scripts()
 // Ajoute l'action pour enregistrer et charger les scripts
 add_action('wp_enqueue_scripts', 'load_more_photos_scripts');
 
+
+//-----------fonction pour charger plus d'images-----------------
 function load_more_photos()
 {
   // Vérifie le jeton de sécurité pour les requêtes AJAX
@@ -118,7 +116,7 @@ function load_more_photos()
     endwhile;
     wp_reset_postdata();
   else:
-    echo 'No more photos.'; // Aucune photo trouvée
+    echo 'Plus de photos.'; // Aucune photo trouvée
   endif;
 
   die(); // Termine l'exécution du script
@@ -129,7 +127,11 @@ add_action('wp_ajax_load_more_photos', 'load_more_photos');
 add_action('wp_ajax_nopriv_load_more_photos', 'load_more_photos');
 
 
-//------------- fonction de filtrage ------------------
+
+
+
+
+//------------- fonction de filtrage Categories et Format------------------
 function filter_photos()
 {
   check_ajax_referer('load-more-photos-nonce', 'nonce'); // Vérifie le jeton de sécurité
@@ -164,7 +166,6 @@ function filter_photos()
   // Si un format est sélectionné, ajouter la taxonomie à la requête
   if (!empty($format)) {
     // Si une taxonomie "format" existe
-
     $args['tax_query'][] = array(
       'taxonomy' => 'format',
       'field' => 'slug',
@@ -173,10 +174,8 @@ function filter_photos()
 
   }
 
-
   // Exécuter la requête WP_Query
   $query = new WP_Query($args);
-
   if ($query->have_posts()):
     while ($query->have_posts()):
       $query->the_post();
@@ -217,3 +216,5 @@ function filter_photos()
 
 add_action('wp_ajax_filter_photos', 'filter_photos'); // Action pour utilisateur connecté
 add_action('wp_ajax_nopriv_filter_photos', 'filter_photos'); // Action pour utilisateur non connecté
+
+

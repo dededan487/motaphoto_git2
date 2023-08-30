@@ -6,7 +6,7 @@ jQuery(document).ready(function ($) {
         var order = $('#order-filter').val(); // Valeur de l'ordre de tri sélectionné
         var year = $('#year-filter').val(); // Valeur de l'année sélectionnée
 
-        console.log('Calling AJAX for year filtering...'); // Message de débogage
+        console.log('Appel AJAX pour les year filtres...'); // Message de débogage
 
 
 
