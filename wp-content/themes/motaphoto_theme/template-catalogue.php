@@ -6,7 +6,10 @@ Template Name: Catalog Template
 // Inclure l'en-tête du site
 get_header();
 ?>
+<?php require 'templates_parts/header_bandeau.php'; ?>
+
 <main id="main" class="site-main" role="main">
+
     <div id="primary" class="content-area">
 
         <div class="filtres">
@@ -57,7 +60,7 @@ get_header();
                 while ($query->have_posts()):
                     $query->the_post();
                     ?>
-                    <div class="related-thumbnail">
+                    <div class="related-thumbnail image-galerie">
                         <h3 class="titre_categorie">
                             <span class="titre1">
                                 <?php the_title(); ?>
@@ -75,11 +78,16 @@ get_header();
                                 ?>
                             </span>
                         </h3>
+                        
                         <div class="eye-icon">
                             <a href="<?php the_permalink(); ?>" class="liens">&#128065;</a>
                             <!-- Lien vers la photo (icône d'œil) -->
 
                         </div>
+
+                        <span class="icon liens" data-fancybox="gallery"
+                            data-src="<?php echo esc_url(wp_get_attachment_url(get_post_thumbnail_id())); ?>"> &#128437;
+                        </span>
 
                         <?php the_post_thumbnail('full'); ?> <!-- Afficher la photo -->
                     </div>
@@ -99,6 +107,7 @@ get_header();
 
     </div><!-- #primary -->
 </main><!-- #main -->
+</div>
 
 
 <?php

@@ -218,3 +218,18 @@ add_action('wp_ajax_filter_photos', 'filter_photos'); // Action pour utilisateur
 add_action('wp_ajax_nopriv_filter_photos', 'filter_photos'); // Action pour utilisateur non connecté
 
 
+//----------------- ligthbox----------
+function add_custom_scripts3() {
+  // Charger jQuery depuis le CDN
+  wp_enqueue_script('jquery', 'https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js', array(), '3.4.1', true);
+
+  // Charger le fichier fancybox CSS depuis le CDN
+  wp_enqueue_style('fancybox-css', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css');
+
+  // Charger le fichier fancybox JavaScript depuis le CDN
+  wp_enqueue_script('fancybox-js', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', array('jquery'), '3.5.7', true);
+
+  // Charger votre script personnalisé
+  wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery'), '1.0', true);
+}
+add_action('wp_enqueue_scripts', 'add_custom_scripts3');

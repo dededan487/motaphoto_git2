@@ -48,14 +48,17 @@ Text Domain: motaphoto_theme
     font-style: normal;
 }
 
+/* Centrer horizontalement en utilisant margin: auto; */
 body {
-    width: auto;
     margin: 0;
-    background-color: rgb(255, 255, 255);
 }
 
+
 #primary {
-    margin-top: 30%;
+    margin-top: 35%;
+    margin-left: 10%;
+    width: 80%; /* Ajustez la largeur du conteneur selon vos besoins */
+    
 }
 
 h1 {
@@ -144,17 +147,17 @@ button:hover {
 
 #catalog {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
     /* Deux colonnes de largeur égale */
-    gap: 30px;
-    margin: 0 15% 0 10%;
+    
+    
 
 }
 
 .related-thumbnail img {
-    width: 70vh;
+    width: 62vh;
     /* 50% de la largeur du viewport */
-    height: 70vh;
+    height: 63vh;
     /* 50% de la hauteur du viewport */
     object-fit: cover;
 }
@@ -165,7 +168,7 @@ button:hover {
 .filtres {
     display: grid;
     grid-template-columns: 1fr 1fr 2fr 1fr;
-    margin: 0 0% 3% 10%;
+    margin: 0 0% 3% 1%;
     width: 80%;
 }
 
@@ -203,6 +206,9 @@ button:hover {
     /* Afficher l'icône au survol */
 }
 
+
+
+
 .liens {
     text-decoration: none;
     /* Supprimer le soulignement du lien */
@@ -221,7 +227,7 @@ button:hover {
 }
 
 .related-thumbnail {
-    border: 0px solid #ccc;
+    border: 0px solid #e30e0e;
     padding: 10px;
 }
 
@@ -229,6 +235,7 @@ button:hover {
 .related-thumbnail:hover .titre_categorie {
     opacity: 1;
     /* Afficher l'icône au survol */
+    z-index: 100;
 }
 
 span.categorie1 p {
@@ -247,7 +254,6 @@ span.titre1,
 }
 
 article {
-    margin: 5%;
     text-transform: uppercase;
 }
 
@@ -306,6 +312,7 @@ article {
     list-style: none;
     padding: 0;
     margin: 0;
+    width: 105%;
 }
 
 .load-more-photos1 {
@@ -331,4 +338,27 @@ article {
 
 .footer-link {
     margin: 0 10px;
+}
+
+.visible-photo {
+    flex-wrap: wrap;
+}
+
+
+.icon {
+    position: absolute;
+    top: 5%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    cursor: pointer;
+    color: #ffffff;
+    z-index: 10;
+    font-weight:900;
+    opacity: 0;
+}
+
+.related-thumbnail:hover .icon {
+    opacity: 1;
+    /* Afficher l'icône au survol */
 }
