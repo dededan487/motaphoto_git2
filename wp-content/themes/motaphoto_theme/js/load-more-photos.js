@@ -57,6 +57,3 @@ jQuery(document).ready(function () {
 });
 
 
-
-// ----------------------bouton "toutes les photos" du lien apparenté 
-

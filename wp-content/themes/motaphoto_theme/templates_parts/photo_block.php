@@ -72,6 +72,10 @@ if ($categories && !is_wp_error($categories)) {
                                 <a href="<?php the_permalink(); ?>" class="liens">&#128065;</a>
                                 <!-- Lien vers la photo (icône d'œil) -->
                             </div>
+
+                            <span class="screen-icon liens" data-fancybox="gallery"
+                            data-src="<?php echo esc_url(wp_get_attachment_url(get_post_thumbnail_id())); ?>"> &#128437;
+                        </span>
                             <?php the_post_thumbnail('full'); ?> <!--Afficher la photo -->
                         </div>
                     </li>

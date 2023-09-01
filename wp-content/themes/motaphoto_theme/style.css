@@ -56,7 +56,7 @@ body {
 
 #primary {
     margin-top: 35%;
-    margin-left: 10%;
+    margin-left: 14%;
     width: 80%; /* Ajustez la largeur du conteneur selon vos besoins */
     
 }
@@ -187,6 +187,7 @@ button:hover {
 .related-thumbnail {
     position: relative;
     display: inline-block;
+    width: 80%;
 }
 
 .eye-icon {
@@ -194,19 +195,16 @@ button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 40px;
-    z-index: 2;
+    font-size: 80px;
     opacity: 0;
     /* Masquer l'icône au départ */
-    transition: opacity 0.3s ease;
+    transition: opacity 0.9s ease;
 }
 
 .related-thumbnail:hover .eye-icon {
     opacity: 1;
     /* Afficher l'icône au survol */
 }
-
-
 
 
 .liens {
@@ -218,7 +216,7 @@ button:hover {
 .titre_categorie {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 80%;
     margin-top: 0px;
     margin-bottom: 0px;
     position: absolute;
@@ -312,7 +310,7 @@ article {
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 105%;
+    width: 100%;
 }
 
 .load-more-photos1 {
@@ -345,20 +343,21 @@ article {
 }
 
 
-.icon {
+.screen-icon {
     position: absolute;
-    top: 5%;
-    right: 0;
-    transform: translate(-50%, -50%);
-    font-size: 40px;
+    op: 10%;
+    right: 3%;
+    ransform: translate(-50%, -50%);
+    font-size: 60px;
     cursor: pointer;
     color: #ffffff;
     z-index: 10;
     font-weight:900;
     opacity: 0;
+    transition: opacity 0.9s ease;
 }
 
-.related-thumbnail:hover .icon {
+.related-thumbnail:hover .screen-icon {
     opacity: 1;
     /* Afficher l'icône au survol */
 }

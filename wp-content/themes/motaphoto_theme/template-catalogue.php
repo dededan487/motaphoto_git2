@@ -85,7 +85,7 @@ get_header();
 
                         </div>
 
-                        <span class="icon liens" data-fancybox="gallery"
+                        <span class="screen-icon liens" data-fancybox="gallery"
                             data-src="<?php echo esc_url(wp_get_attachment_url(get_post_thumbnail_id())); ?>"> &#128437;
                         </span>
 

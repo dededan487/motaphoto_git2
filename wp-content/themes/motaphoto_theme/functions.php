@@ -110,6 +110,10 @@ function load_more_photos()
           <a href="<?php the_permalink(); ?>" class="liens">&#128065;</a>
           <!-- Lien vers la photo (icône d'œil) -->
         </div>
+
+        <span class="screen-icon liens" data-fancybox="gallery"
+          data-src="<?php echo esc_url(wp_get_attachment_url(get_post_thumbnail_id())); ?>"> &#128437;
+        </span>
         <?php the_post_thumbnail('full'); ?> <!-- Afficher la photo -->
       </div>
       <?php
@@ -125,10 +129,6 @@ function load_more_photos()
 add_action('wp_ajax_load_more_photos', 'load_more_photos');
 // Ajoute l'action pour gérer la requête AJAX lorsque l'utilisateur n'est pas connecté
 add_action('wp_ajax_nopriv_load_more_photos', 'load_more_photos');
-
-
-
-
 
 
 //------------- fonction de filtrage Categories et Format------------------
@@ -203,6 +203,10 @@ function filter_photos()
           <a href="<?php the_permalink(); ?>" class="liens">&#128065;</a>
           <!-- Lien vers la photo (icône d'œil) -->
         </div>
+
+        <span class="screen-icon liens" data-fancybox="gallery"
+          data-src="<?php echo esc_url(wp_get_attachment_url(get_post_thumbnail_id())); ?>"> &#128437;
+        </span>
         <?php the_post_thumbnail('full'); ?> <!-- Afficher la photo -->
       </div>
       <?php
@@ -218,10 +222,9 @@ add_action('wp_ajax_filter_photos', 'filter_photos'); // Action pour utilisateur
 add_action('wp_ajax_nopriv_filter_photos', 'filter_photos'); // Action pour utilisateur non connecté
 
 
-//----------------- ligthbox----------
-function add_custom_scripts3() {
-  // Charger jQuery depuis le CDN
-  wp_enqueue_script('jquery', 'https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js', array(), '3.4.1', true);
+//----------------- ligthbox et fancybox----------
+function add_custom_scripts3()
+{
 
   // Charger le fichier fancybox CSS depuis le CDN
   wp_enqueue_style('fancybox-css', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css');
