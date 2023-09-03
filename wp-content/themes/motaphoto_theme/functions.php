@@ -236,3 +236,22 @@ function add_custom_scripts3()
   wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery'), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'add_custom_scripts3');
+
+
+//------------------------ajoute classe  au fichier single
+
+// D fonction personnalisée  "add_custom_body_class" avec un paramètre "$classes" ).
+function add_custom_body_class($classes)
+{
+  // Vérifie si la page est une publication individuelle (single) en utilisant la fonction WordPress "is_single()".
+  // Et si le type de publication est "photos" en utilisant "get_post_type()".
+  if (is_single() && get_post_type() == 'photos') {
+    // Si les deux conditions ci-dessus sont vraies, ajoute la classe "custom-single-photos-page" au tableau de classes "$classes".
+    $classes[] = 'custom-single-photos-page';
+  }
+  // Retourne le tableau de classes modifié.
+  return $classes;
+}
+
+// Ajoute un filtre WordPress pour exécuter la fonction "add_custom_body_class" sur le hook "body_class".
+add_filter('body_class', 'add_custom_body_class');
