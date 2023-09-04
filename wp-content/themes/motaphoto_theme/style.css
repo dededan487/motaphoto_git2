@@ -369,8 +369,6 @@ article {
 
 @media screen and (max-width: 800px) {
 
-
-
     /* Cacherle menu par défaut sur les écrans plus petits */
     #primary-menu {
         display: none;
@@ -501,6 +499,10 @@ article {
         width: 60%;
     }
 
+    #load-more-button {
+        width:50%
+    }
+    
 
 
     .footer-links {
