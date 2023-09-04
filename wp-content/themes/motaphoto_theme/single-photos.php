@@ -1,11 +1,12 @@
 <?php
 /*
 Template Name: CPT Perso
-template Podt Type: post, page, product
+template Post Type: post, page, product
 */
 ?>
 
 <?php get_header(); ?>
+<!-- Inclut l'en-tête du site -->
 
 <div id="primary" class="content-area">
 
@@ -17,7 +18,8 @@ template Podt Type: post, page, product
             ?>
 
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            
+            <!-- Article avec un ID unique et des classes basées sur le type de contenu -->
+
                 <div class="entry-content">
                     <div class="format_single">
                         <header class="entry-header">
@@ -76,40 +78,38 @@ template Podt Type: post, page, product
 
                     <!-- Ajout des miniatures et boutons de pagination -->
                     <div class="pagination-container">
-                        <!--conteneur pour les miniatures et les boutons de pagination -->
+                        <!-- Conteneur pour les miniatures et les boutons de pagination -->
                         <?php
                         // Ouvre une balise PHP pour exécuter du code PHP à l'intérieur du HTML
-                    
                         $previous_photo = get_previous_post();
                         // Récupère l'article précédent dans le flux de publications
-                    
                         $next_photo = get_next_post();
                         // Récupère l'article suivant dans le flux de publications
                         ?>
 
                         <?php if ($previous_photo): ?>
-                            <!-- vérifie si un article précédent existe -->
+                            <!-- Vérifie si un article précédent existe -->
 
                             <a href="<?php echo get_permalink($previous_photo->ID); ?>"
                                 class="previous-photo thumbnail-preview">
-                                <!-- lien vers l'article précédent avec la classe "previous-photo" et "thumbnail-preview" -->
+                                <!-- Lien vers l'article précédent avec la classe "previous-photo" et "thumbnail-preview" -->
                                 <span class="pagination-label">&larr;</span>
-                                <!--  chevron pointant vers la gauche -->
+                                <!-- Chevron pointant vers la gauche -->
                                 <?php echo get_the_post_thumbnail($previous_photo->ID, 'thumbnail'); ?>
-                                <!-- miniature de l'article précédent avec la taille "thumbnail" -->
+                                <!-- Miniature de l'article précédent avec la taille "thumbnail" -->
                             </a>
                         <?php endif; ?>
                         <!-- Ferme la structure conditionnelle pour l'article précédent -->
 
                         <?php if ($next_photo): ?>
-                            <!-- vérifie si un article suivant existe -->
+                            <!-- Vérifie si un article suivant existe -->
 
                             <a href="<?php echo get_permalink($next_photo->ID); ?>" class="next-photo thumbnail-preview">
-                                <!-- lien vers l'article suivant avec la classe "next-photo" et "thumbnail-preview" -->
+                                <!-- Lien vers l'article suivant avec la classe "next-photo" et "thumbnail-preview" -->
                                 <span class="pagination-label"> &rarr; </span>
-                                <!-- chevron pointant vers la droite -->
+                                <!-- Chevron pointant vers la droite -->
                                 <?php echo get_the_post_thumbnail($next_photo->ID, 'thumbnail'); ?>
-                                <!-- miniature de l'article suivant avec la taille "thumbnail" -->
+                                <!-- Miniature de l'article suivant avec la taille "thumbnail" -->
                             </a>
                         <?php endif; ?>
                         <!-- Ferme la structure conditionnelle pour l'article suivant -->
@@ -134,10 +134,10 @@ template Podt Type: post, page, product
     jQuery(document).ready(function (jQuery) {
         jQuery('.open-popup').click(function () {
             var reference = jQuery(this).data('reference');
-            // Ouvrir la modale 
+            // Ouvre la modale
             jQuery('#myModal').show();
 
-            // Préremplir le champ "RÉF. PHOTO" du formulaire de contact
+            // Préremplit le champ "RÉF. PHOTO" du formulaire de contact
             jQuery('#ref_photo').val(reference);
 
         });

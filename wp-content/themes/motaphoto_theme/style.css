@@ -81,6 +81,11 @@ h3 {
     font-family: 'space_mono_normal', sans-serif;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 .description_photo {
     font-family: 'space_mono_normal', sans-serif;
 }
@@ -500,9 +505,9 @@ article {
     }
 
     #load-more-button {
-        width:50%
+        width: 50%
     }
-    
+
 
 
     .footer-links {

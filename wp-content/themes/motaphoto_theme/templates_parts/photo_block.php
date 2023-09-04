@@ -92,5 +92,4 @@ if ($categories && !is_wp_error($categories)) {
     endif;
 
 }
-
 ?>
